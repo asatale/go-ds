@@ -4,6 +4,6 @@ This repository contains small go snippets for various algorithms and interestin
 Test cases can be executed with following
 ```go test -v --bench . --benchmem```
 
-| Directory      | Description  |
-| :---           |         ---: |
-| qsort          | Experimental quicksort implementation   |
+| Directory      | Description                             |
+| :---:          |     :---:                               |
+| [qsort](qsort) | Experimental quicksort implementation   |
