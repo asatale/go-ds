@@ -94,6 +94,10 @@ func TestStringSort(t *testing.T) {
 			input:  []interface{}{"da", "ac", "zb", "a"},
 			output: []interface{}{"a", "ac", "da", "zb"},
 		},
+		{
+			input:  []interface{}{"a", "a", "a", "a"},
+			output: []interface{}{"a", "a", "a", "a"},
+		},
 	}
 	runTestcases(testCases,
 		func(a, b interface{}) int {
