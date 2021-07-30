@@ -1,4 +1,4 @@
-go # misc-go
+# Miscellaneous Go programs
 This repository contains small go snippets for various algorithms and interesting problems. They are small enough that have individual repository for them makes no sense (to me). Hence they are all clubbed together in this repository.
 
 Test cases can be executed with following
@@ -6,4 +6,4 @@ Test cases can be executed with following
 
 | Directory      | Description                             |
 | :---:          |     :---:                               |
-| [qsort](qsort) | Experimental quicksort implementation   |
+| [qsort](qsort) | Experimental recursive and iterative implementation for quicksort   |
