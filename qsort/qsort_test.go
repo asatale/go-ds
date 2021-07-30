@@ -79,6 +79,10 @@ func TestIntegerSort(t *testing.T) {
 func TestStringSort(t *testing.T) {
   testCases := []testCase{
     {
+      input:  []interface{}{"b", "a"},
+      output: []interface{}{"a", "b"},
+    },
+    {
       input:  []interface{}{"d", "c", "b", "a"},
       output: []interface{}{"a", "b", "c", "d"},
     },
@@ -86,7 +90,6 @@ func TestStringSort(t *testing.T) {
       input:  []interface{}{"A", "a", "AA", "aa"},
       output: []interface{}{"A", "AA", "a", "aa"},
     },
-
     {
       input:  []interface{}{"da", "ac", "zb", "a"},
       output: []interface{}{"a", "ac", "da", "zb"},
