@@ -1,7 +1,9 @@
 package qsort
 
 import (
+	"math/rand"
 	"testing"
+	"time"
 )
 
 type testCase struct {
@@ -30,6 +32,19 @@ func runTestcases(tests []testCase, cmp Compare, t *testing.T) {
 	}
 }
 
+func dataset(size int) (data []interface{}) {
+	data = make([]interface{}, size)
+	for i := 0; i < size; i++ {
+		data[i] = i
+	}
+	return data
+}
+
+func randomize(data []interface{}) []interface{} {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(data), func(i, j int) { data[i], data[j] = data[j], data[i] })
+	return data
+}
 func TestIntegerSort(t *testing.T) {
 
 	testCases := []testCase{
@@ -60,6 +75,10 @@ func TestIntegerSort(t *testing.T) {
 		{
 			input:  []interface{}{},
 			output: []interface{}{},
+		},
+		{
+			input:  randomize(dataset(1000000)),
+			output: dataset(1000000),
 		},
 	}
 	runTestcases(testCases,
