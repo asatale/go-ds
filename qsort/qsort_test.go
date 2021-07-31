@@ -45,6 +45,14 @@ func randomize(data []interface{}) []interface{} {
 	rand.Shuffle(len(data), func(i, j int) { data[i], data[j] = data[j], data[i] })
 	return data
 }
+
+func reverse(data []interface{}) []interface{} {
+	for i, j := 0, len(data)-1; i < j; i, j = i+1, j-1 {
+		data[i], data[j] = data[j], data[i]
+	}
+	return data
+}
+
 func TestIntegerSort(t *testing.T) {
 
 	testCases := []testCase{
@@ -76,9 +84,13 @@ func TestIntegerSort(t *testing.T) {
 			input:  []interface{}{},
 			output: []interface{}{},
 		},
-		{
-			input:  randomize(dataset(1000000)),
-			output: dataset(1000000),
+		{ // Large data set -- randomized
+			input:  randomize(dataset(1000 * 1000)), // 1M data
+			output: dataset(1000 * 1000),
+		},
+		{ // Large data set -- worstcase
+			input:  reverse(dataset(100 * 100)), // 100K data
+			output: dataset(100 * 100),
 		},
 	}
 	runTestcases(testCases,
