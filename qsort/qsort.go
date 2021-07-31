@@ -1,5 +1,9 @@
 package qsort
 
+import (
+	"math"
+)
+
 //Compare function returns
 // -1 if first quantity is less than second
 //  0 if first quantity is same as second
@@ -29,7 +33,9 @@ func qsortIterative(data []interface{}, lo, hi int, cmp Compare) {
 	type qIteration struct {
 		lo, hi int
 	}
-	iter := make([]qIteration, 0)
+	// Allocate stack size of Log2(size of data) * 2 -- this should be sufficient for most usecases
+	iterSize := int(math.Ceil(math.Log2(float64(len(data))))) * 2
+	iter := make([]qIteration, 0, iterSize)
 	iter = append(iter, qIteration{lo: lo, hi: hi})
 	for len(iter) > 0 {
 		ii := iter[len(iter)-1]
