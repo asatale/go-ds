@@ -1,5 +1,5 @@
-# Miscellaneous Go programs
-This repository contains small go snippets for various algorithms and interesting problems. They are small enough that have individual repository for them makes no sense (to me). Hence they are all clubbed together in this repository.
+# Datastructures in Go
+This repository contains various datastructures implemented in Go.
 
 Test cases can be executed with following
 ```go test -v --bench . --benchmem```
