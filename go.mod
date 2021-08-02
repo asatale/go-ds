@@ -1,3 +1,3 @@
-module github.com/asatale/misc-go
+module github.com/asatale/go-ds
 
 go 1.16
