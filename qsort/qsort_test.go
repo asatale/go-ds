@@ -2,6 +2,7 @@ package qsort
 
 import (
 	"math/rand"
+	"reflect"
 	"testing"
 	"time"
 )
@@ -26,7 +27,7 @@ func equal(a, b []interface{}, cmp Compare) bool {
 func runTestcases(tests []testCase, cmp Compare, t *testing.T) {
 	for _, test := range tests {
 		Sort(test.input, cmp)
-		if !equal(test.input, test.output, cmp) {
+		if !reflect.DeepEqual(test.input, test.output) {
 			t.Errorf("Failed. Expected: %v, Got: %v", test.output, test.input)
 		}
 	}
