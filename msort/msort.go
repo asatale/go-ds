@@ -1,9 +1,5 @@
 package msort
 
-import (
-	_ "fmt"
-)
-
 //Compare function returns
 // -1 if first quantity is less than second
 //  0 if first quantity is same as second
@@ -36,20 +32,16 @@ func msortRecursive(data []interface{}, cmp Compare) []interface{} {
 }
 
 func msortIterative(data []interface{}, cmp Compare) []interface{} {
-	min := func(a, b int) int {
-		if a < b {
-			return a
-		}
-		return b
-	}
-
 	result := make([]interface{}, 0, len(data))
-	for interval := 1; interval < len(data)/2; interval = interval * 2 {
-		for i := 0; i < len(data); i = i + 2*interval {
-			var lo, mid, hi int
-			lo = i
-			mid = i + interval
-			hi = min(i+2*interval, len(data))
+
+	for interval := 1; interval < len(data); interval = interval * 2 {
+		for i := 0; i+interval < len(data); i = i + 2*interval {
+			lo := i
+			mid := lo + interval
+			hi := mid + interval
+			if hi > len(data) {
+				hi = len(data)
+			}
 			result = result[:0]
 			result = merge(data[lo:mid], data[mid:hi], cmp, result)
 			copy(data[lo:hi], result)
