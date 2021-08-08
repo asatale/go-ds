@@ -7,3 +7,4 @@ Test cases can be executed with following
 | Directory      | Description                             |
 | :---:          |     :---:                               |
 | [qsort](qsort) | Experimental recursive and iterative implementation for quicksort   |
+| [msort](msort) | Experimental recursive and iterative implementation for mergesort   |
