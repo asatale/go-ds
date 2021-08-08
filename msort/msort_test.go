@@ -46,8 +46,8 @@ func TestIntegerSort(t *testing.T) {
 
 	testCases := []testCase{
 		{
-			input:  []interface{}{4, 3, 2, 1},
-			output: []interface{}{1, 2, 3, 4},
+			input:  []interface{}{5, 4, 3, 2, 1},
+			output: []interface{}{1, 2, 3, 4, 5},
 		},
 		{
 			input:  []interface{}{1, 2, 3, 4},
